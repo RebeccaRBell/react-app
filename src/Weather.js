@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./App.css"; 
-import CurrentTime from "./CurrentTime";
 
 export default function Weather() {
    
@@ -52,7 +51,6 @@ export default function Weather() {
             <h1 className="city" id="city">
               {searched}
             </h1>
-             <CurrentTime />
             <div>
               <ul className="details">
                 <li className="description"><span id="description">Description: </span>{description}</li>

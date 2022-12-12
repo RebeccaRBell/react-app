@@ -1,50 +1,58 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./App.css"; 
+import CurrentTime from "./CurrentTime";
 
 export default function Weather() {
+   
+    const [city, setCity] = useState("");
+    const [searched, setSearched] = useState("");
     const [temp, setTemp] = useState("");
     const [description, setDescription] = useState ("");
     const [humidity, setHumidity] = useState("");
     const [wind, setWind] = useState("");
+
+
     function getData(response){
-    console.log(response);
+    console.log(response.data);
     setTemp (Math.round(response.data.temperature["current"]));
     setDescription (response.data.condition["description"]);
     setHumidity (response.data.temperature["humidity"]);
     setWind (Math.round(response.data.wind["speed"]));
+    setSearched (response.data["city"]);
  }
+    function logSearch(response) {
+        setCity(response.target.value);
+    }
 
-    let city ="Miami";
+    function searchCity(event) {
+        event.preventDefault();
     const apiKey = "0t2105f1dc833abd4d72b4f0503d9bao";
     const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(getData);
-
+}
     return (
         <div>
             <div className="container box whole-app">
         <div className="row row-one">
-          <div className="col city-search">
+          <form className="col city-search" onSubmit={searchCity}>
             <input
               type="input"
               id="search_box"
               className="search-box"
-              placeholder="Enter City..."
+              placeholder="Enter City..." onChange={logSearch}
             />
             <input type="button" id="submit-button" value="Search" />
             <submit id="current-location" />
             <i className="fa-solid fa-location-crosshairs fa-lg"></i>
-          </div>
+            </form>
         </div>
         <div className="row top-row">
           <div className="col-lg-3 column-one">
             <h1 className="city" id="city">
-              Glasgow
+              {searched}
             </h1>
-            <h3 className="current_time" id="current-time">
-              Last Updated:
-              <br />
-            </h3>
+             <CurrentTime />
             <div>
               <ul className="details">
                 <li className="description"><span id="description">Description: </span>{description}</li>
@@ -63,10 +71,10 @@ export default function Weather() {
               data-toggle="buttons"
             >
               <label className="btn btn-secondary" id="temp-button1">
-                <input type="radio" name="options" id="option1" /> °C
+                <input type="radio" name="options" id="option1"  /> °C
               </label>
               <label className="btn btn-secondary" id="temp-button2">
-                <input type="radio" name="options" id="option2" /> °F
+                <input type="radio" name="options" id="option2"  /> °F
               </label>
             </div>
             <br />
@@ -74,7 +82,7 @@ export default function Weather() {
               <p>{temp}°</p>
             </div>
           </div>
-          <div className="col-lg-6">
+                  <div className="col-lg-6">
             <div className="today_box">
               <section className="today_first">
                 <div className="row align-items-start border-dark">

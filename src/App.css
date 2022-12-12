@@ -193,6 +193,7 @@ body {
 
 .description {
   list-style: none;
+  text-transform: capitalize;
 }
 
 #wind {

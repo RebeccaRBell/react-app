@@ -4,12 +4,12 @@ import "./App.css";
 
 export default function Weather() {
    
-    const [city, setCity] = useState("");
-    const [searched, setSearched] = useState("");
-    const [temp, setTemp] = useState("");
-    const [description, setDescription] = useState ("");
-    const [humidity, setHumidity] = useState("");
-    const [wind, setWind] = useState("");
+    const [city, setCity] = useState("London");
+    const [searched, setSearched] = useState("London");
+    const [temp, setTemp] = useState("0");
+    const [description, setDescription] = useState ("Cloudy");
+    const [humidity, setHumidity] = useState("50");
+    const [wind, setWind] = useState("20");
 
 
     function getData(response){
@@ -42,28 +42,16 @@ export default function Weather() {
               placeholder="Enter City..." onChange={logSearch}
             />
             <input type="button" id="submit-button" value="Search" />
-            <submit id="current-location" />
-            <i className="fa-solid fa-location-crosshairs fa-lg"></i>
             </form>
         </div>
-        <div className="row top-row">
-          <div className="col-lg-3 column-one">
+        <div className="row row-two">
+          <div className="col-lg-6 column-one">
             <h1 className="city" id="city">
               {searched}
             </h1>
             <div>
-              <ul className="details">
-                <li className="description"><span id="description">Description: </span>{description}</li>
-                <li className="wind">
-                  Wind: <span id="wind">{wind}</span>mph
-                </li>
-                <li className="humidity">
-                  Humidity: <span id="humidity">{humidity}</span>%
-                </li>
-              </ul>
+                <img className="weather-icon" src="images/04d.png" alt="weather icon"></img>
             </div>
-          </div>
-          <div className="col-lg-3 column-two">
             <div
               className="btn-group btn-group-toggle buttons"
               data-toggle="buttons"
@@ -75,123 +63,35 @@ export default function Weather() {
                 <input type="radio" name="options" id="option2"  /> °F
               </label>
             </div>
-            <br />
             <div className="temp-today">
               <p>{temp}°</p>
             </div>
           </div>
-                  <div className="col-lg-6">
-            <div className="today_box">
-              <section className="today_first">
-                <div className="row align-items-start border-dark">
-                  <div className="col time" id="today-first-time">
-                    09:00
-                  </div>
-                  <div className="col image">
-                    <img
-                      id="today-first-img"
-                      src={"/images/02d.png"}
-                      alt="weather icon illustration"
-                      className="images_9am"
-                      width="37px"
-                    />
-                  </div>
-                  <div className="col" id="today-first-temp">
-                    16°
-                  </div>
-                </div>
-              </section>
-              <section className="today_second">
-                <div className="row align-items-start">
-                  <div className="col" id="today-second-time">
-                    12:00{" "}
-                  </div>
-                  <div className="col">
-                    <img
-                      id="today-second-img"
-                      src={"/images/02d.png"}
-                      alt="weather icon illustration"
-                      className="image_12pm"
-                      width="37px"
-                    />
-                  </div>
-                  <div className="col" id="today-second-temp">
-                    20°{" "}
-                  </div>
-                </div>
-              </section>
-              <section className="today_third">
-                <div className="row align-items-start">
-                  <div className="col" id="today-third-time">
-                    15:00{" "}
-                  </div>
-                  <div className="col">
-                    <img
-                      id="today-third-img"
-                      src={"/images/01d.png"}
-                      alt="weather icon illustration"
-                      className="image_3pm"
-                      width="37px"
-                    />{" "}
-                  </div>
-                  <div className="col" id="today-third-temp">
-                    20°{" "}
-                  </div>
-                </div>
-              </section>
-              <section className="today_fourth">
-                <div className="row align-items-start">
-                  <div className="col" id="today-fourth-time">
-                    18:00
-                  </div>
-                  <div className="col">
-                    <img
-                      id="today-fourth-img"
-                      src={"/images/01d.png"}
-                      alt="weather icon illustration"
-                      className="image_6pm"
-                      width="37px"
-                    />
-                  </div>
-                  <div className="col" id="today-fourth-temp">
-                    19°
-                  </div>
-                </div>
-              </section>
-              <section className="today_fifth">
-                <div className="row align-items-start">
-                  <div className="col" id="today-fifth-time">
-                    21:00{" "}
-                  </div>
-                  <div className="col">
-                    <img
-                      id="today-fifth-img"
-                      src={"/images/02d.png"}
-                      alt="weather icon illustration"
-                      className="image_9pm"
-                      width="37px"
-                    />
-                  </div>
-                  <div className="col" id="today-fifth-temp">
-                    17°
-                  </div>
-                </div>
-              </section>
-            </div>
           </div>
-        </div>
-      </div>
-      <footer className="footer-info">
-        <p>
-          <a
+          <div className="col-lg column-two">
+            <ul className="details">
+               <li className="description" id="description">{description}</li>
+                <li className="wind">
+                  Wind: <span id="wind">{wind}</span>mph
+                </li>
+                <li className="humidity">
+                  Humidity: <span id="humidity">{humidity}</span>%
+                </li>
+              </ul>
+              </div>
+
+          </div>
+      <footer>
+         <div className="footer-info">
+          <div className="footer1"><a
             href="https://github.com/RebRomBell?tab=repositories"
             className="footer-info"
             rel="noreferer"
           >
             Open-source code
-          </a>{" "}
-          by Rebecca Bell
-        </p>
+          </a>
+          by Rebecca Bell</div>
+          <div id="current-time" className="footer2">Last Updated:</div></div>
       </footer>
       </div>
     );

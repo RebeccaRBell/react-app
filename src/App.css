@@ -15,27 +15,22 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   text-align: center;
-  border-style: solid;
-  border-color: rgb(157, 168, 161, 0.5);
+  border: 2px solid rgb(157, 168, 161, 0.5);
   margin-top: 25px;
   padding: 25px;
-  max-width: 1000px;
+  width: 500px;
 }
 
 .row-one {
   width: 100%;
-  padding-top: 2%;
-  padding-bottom: 2%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
+  padding-bottom: 10px;
 }
 
 .search-box {
   width: 70%;
+  height: auto;
   font-size: 18px;
   border-radius: 10px;
   border: 1px solid lightgrey;
@@ -44,9 +39,9 @@ body {
 }
 
 #submit-button {
-  width: 15%;
-  margin: 1%;
-  font-size: 18px;
+  width: 20%;
+  margin: 10px;
+  font-size: 17px;
   border: 1px solid lightgray;
   border-radius: 10px;
   background-color: ghostwhite;
@@ -56,88 +51,75 @@ body {
   background-color: #f0684b;
   color: ghostwhite;
 }
-
-#current-location {
-  font-size: 18px;
-  text-align: center;
-}
-
-#current-location:hover {
-  color: #f0684b;
-  cursor: pointer;
-}
-
-.city-search {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 3%;
-}
-
 .column-one {
-  text-align: left;
-  padding-top: 50px;
+  width: 300px;
   margin: 0px;
+  padding: 0px;
 }
 
 .city {
-  min-height: 50px;
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 400;
-  text-align: left;
-  padding-bottom: 5px;
+  text-align: center;
   margin: 0px;
-  padding-left: 10px;
-  margin-top: -50px;
+  margin-top: 40px;
+  text-transform: capitalize;
+}
+.weather-icon {
+  padding-top: 30px;
+width: 100px;
+}
+#description {
+  position: relative;
+  text-transform: capitalize;
+  font-weight: 400;
+  font-size: 25px;
+  opacity: 0.7;
+  padding: 10px;
+}
+.description {
+  list-style: none;
   text-transform: capitalize;
 }
 
-#current-time {
-  padding: 0px;
-  margin: 0px;
-  font-size: 15px;
-  padding-bottom: 50px;
-  padding-left: 15px;
-  text-align: left;
+.column-two {
+width: 300px;
 }
 
 .temp-today {
-  padding-right: 60px;
-  padding-top: 10px;
+  padding-top: 30px;
   margin: 0px;
+  text-align: center;
+  padding-left: 20px;
 }
 
 .temp-today p {
-  font-size: 110px;
+  font-size: 150px;
   font-weight: 200;
   text-align: center;
 }
 
 .buttons {
-  position: relative;
-  text-align: right;
-  align-items: flex-end;
-  margin-top: 100px;
-  margin-right: 90px;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 0px;
+  margin: 0px;
+  margin-bottom: -30px;
 }
 
 #temp-button1 {
-  cursor: pointer;
-  font-size: 22px;
+    cursor: pointer;
+  font-size: 15px;
   background-color: #ffffff;
   color: rgb(92, 100, 95);
   display: block;
   margin: auto;
-  width: 40px;
-  height: 40px;
+  width: 25px;
+  height: 25px;
   padding: 0px;
   text-align: center;
-  padding-right: 5px;
-  padding-top: 2px;
   border: none;
-  border-right: 1px solid #f0684b;
+  border-rgiht: 1px solid grey;
 }
 
 #temp-button1:hover {
@@ -145,19 +127,18 @@ body {
 }
 
 #temp-button2 {
-  cursor: pointer;
-  font-size: 22px;
+     cursor: pointer;
+  font-size: 15px;
   background-color: #ffffff;
   color: rgb(92, 100, 95);
   display: block;
   margin: auto;
-  width: 40px;
-  height: 40px;
+  width: 25px;
+  height: 25px;
   padding: 0px;
   text-align: center;
-  padding-top: 2px;
-  border: none;
-  border-left: 1px solid #f0684b;
+  border:none;
+  border-left: 1px solid grey;
 }
 
 #temp-button2:hover {
@@ -165,39 +146,21 @@ body {
 }
 
 .temp-today p {
-  padding-top: 10px;
   padding-right: 10px;
   font-size: 70px;
   text-align: center;
 }
-
+.details{
+  padding-top: 30px;
+}
 .details li {
   position: relative;
-  text-align: left;
-  padding-top: 10px;
-  margin-left: -25px;
-  font-size: 20px;
+  text-align: center;
+  margin-left: -20px;
+  font-size: 18px;
   font-weight: 400;
-  line-height: 25px;
+  line-height: 30px;
 }
-
-.details-cont {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-
-#description {
-  position: relative;
-  text-transform: capitalize;
-  font-weight: 400;
-}
-
-.description {
-  list-style: none;
-  text-transform: capitalize;
-}
-
 #wind {
   position: relative;
   list-style: none;
@@ -216,80 +179,36 @@ body {
   list-style: none;
 }
 
-.top-row {
-  width: 100%;
-}
-
-.today_box {
-  width: 100%;
-  font-size: 22px;
-  text-align: center;
-  vertical-align: auto;
-  padding-bottom: 20px;
-}
-
-.today_first {
-  position: relative;
-  margin: 0px;
-  border: 1.5px;
-  border-color: rgb(157, 168, 161, 0.5);
-  border-style: solid;
-  text-align: center;
-  padding: 4px;
-}
-
-.today_second {
-  position: relative;
-  margin: 0px;
-  padding: 4px;
-  border: 1.5px;
-  border-top: 0;
-  border-color: rgb(157, 168, 161, 0.5);
-  border-style: solid;
-}
-
-.today_third {
-  position: relative;
-  margin: 0px;
-
-  padding: 4px;
-  border: 1.5px;
-  border-top: 0;
-  border-color: rgb(157, 168, 161, 0.5);
-  border-style: solid;
-}
-
-.today_fourth {
-  position: relative;
-  margin: 0px;
-  padding: 4px;
-  border: 1.5px;
-  border-top: 0;
-  border-color: rgb(157, 168, 161, 0.5);
-  border-style: solid;
-}
-
-.today_fifth {
-  position: relative;
-  margin: 0px;
-  padding: 4px;
-  border: 1.5px;
-  border-top: 0;
-  border-color: rgb(157, 168, 161, 0.5);
-  border-style: solid;
+.row-two {
+  width: 600px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
 }
 
 img {
   filter: opacity(0.8) drop-shadow(0 0 0 red);
+  margin: -5px;
 }
+  .footer-info {
+    width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  .footer1 {
+    width: 50%;
+    font-size: 15px;
+  }
+  .footer2 {
+    width: 50%;
+    text-align: right;
+      font-size: 15px;
+      padding: 5px;
+  }
 
-.footer-info {
-  position: relative;
-  margin: 0 auto;
-  width: 1000px;
-  padding-top: 10px;
-  text-align: left;
-}
 
 @media screen and (min-width: 600px) and (max-width: 1000px) {
   .whole-app {
@@ -309,7 +228,7 @@ img {
     text-align: left;
     padding: 0px;
     margin-top: -20px;
-    width: 50%;
+    width: 100%;
     padding-left: 30px;
     padding-bottom: 30px;
   }
@@ -328,10 +247,11 @@ img {
     margin: 0px;
     font-size: 14px;
     padding-left: 15px;
+    text-align: right;
   }
 
   .column-two {
-    width: 50%;
+    width: 100%;
     padding-bottom: 10px;
   }
 
@@ -357,7 +277,6 @@ img {
     line-height: 25px;
     font-size: 18px;
   }
-
   .today_box {
     width: 100%;
     font-size: 22px;
@@ -366,10 +285,11 @@ img {
   }
 
   .footer-info {
-    position: relative;
-    margin: 0 auto;
-    width: 80%;
-    text-align: left;
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
   }
 }
 

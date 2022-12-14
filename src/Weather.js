@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import CurrentDate from "./CurrentDate";
 import "./App.css"; 
 
 
@@ -11,15 +12,18 @@ export default function Weather() {
     const [description, setDescription] = useState ("Cloudy");
     const [humidity, setHumidity] = useState("50");
     const [wind, setWind] = useState("20");
-
+    const [date, setDate] = useState("");
 
     function getData(response){
-    console.log(response.data);
-    setTemp (Math.round(response.data.temperature["current"]));
-    setDescription (response.data.condition["description"]);
-    setHumidity (response.data.temperature["humidity"]);
-    setWind (Math.round(response.data.wind["speed"]));
-    setSearched (response.data["city"]);
+      console.log(response);
+    setTemp (Math.round(response.data.list[0].main.temp));
+    setDescription (response.data.list[0].weather[0].description);
+    setHumidity (response.data.list[0].main.humidity);
+    setWind (Math.round(response.data.list[0].wind.speed));
+    setSearched (response.data.city.name);
+    setDate (Date((response.data.list[0].dt) * 1000));
+    console.log(date);
+    
  }
     function logSearch(response) {
         setCity(response.target.value);
@@ -27,8 +31,8 @@ export default function Weather() {
 
     function searchCity(event) {
         event.preventDefault();
-    const apiKey = "0t2105f1dc833abd4d72b4f0503d9bao";
-    const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+    const apiKey = "5d6c4448bec0438467d1b99e784b02d6";
+    const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(getData);
 }
     return (
@@ -92,7 +96,8 @@ export default function Weather() {
             Open-source code
           </a>
           by Rebecca Bell</div>
-          <div id="current-time" className="footer2">Last Updated:</div></div>
+          <div id="current-time" className="footer2">Last Updated:</div><CurrentDate date ={date}/>
+          </div>
       </footer>
       </div>
     );

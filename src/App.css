@@ -325,8 +325,8 @@ img {
 
   #submit-button {
     width: 20%;
-    margin: 1%;
     font-size: 13px;
+    padding: 2px;
     border: 1px solid lightgray;
     border-radius: 10px;
     background-color: ghostwhite;

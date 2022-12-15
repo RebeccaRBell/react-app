@@ -41,7 +41,7 @@ body {
 #submit-button {
   width: 20%;
   margin: 10px;
-  font-size: 17px;
+  font-size: 15px;
   border: 1px solid lightgray;
   border-radius: 10px;
   background-color: ghostwhite;
@@ -59,14 +59,15 @@ body {
 
 .city {
   font-size: 36px;
-  font-weight: 400;
+  font-weight: 300;
+  letter-spacing: 1px;
   text-align: center;
   margin: 0px;
   margin-top: 40px;
   text-transform: capitalize;
 }
 .weather-icon {
-  padding-top: 30px;
+  padding-top: 20px;
 width: 100px;
 }
 #description {
@@ -101,7 +102,7 @@ width: 300px;
 
 .buttons {
   align-items: center;
-  padding-top: 50px;
+  padding-top: 30px;
   padding-bottom: 0px;
   margin: 0px;
   margin-bottom: -30px;
@@ -151,7 +152,7 @@ width: 300px;
   text-align: center;
 }
 .details{
-  padding-top: 30px;
+  padding-top: 10px;
 }
 .details li {
   position: relative;
@@ -214,7 +215,7 @@ img {
 @media screen and (min-width: 600px) and (max-width: 1000px) {
   .whole-app {
     margin-top: 25px;
-    width: 450px;
+    width: 400px;
   }
 
   .row-one {
@@ -239,19 +240,19 @@ img {
     margin: 0px;
   }
     .weather-icon {
-      padding-top: 40px;
+      padding-top: 30px;
       width: 100px;
       display: block;
       margin: 0 auto;
     }
 
 .column-two {
-  width: 300px;
+  width: 100%;
 }
 .temp-today {
   padding-top: 0px;
   margin: 0px;
-  margin-bottom: -20px;
+  margin-bottom: -30px;
   text-align: center;
 
 }
@@ -264,7 +265,7 @@ img {
 
 .buttons {
   align-items: center;
-  padding-top: 50px;
+  padding-top: 30px;
   margin: 0px;
 }
 .details {

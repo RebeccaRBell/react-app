@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-import CurrentDate from "./CurrentDate";
 import "./App.css"; 
+import CurrentTime from "./CurrentTime";
+import WeatherIcon from "./WeatherIcon";
 
 
 export default function Weather() {
@@ -12,17 +13,18 @@ export default function Weather() {
     const [description, setDescription] = useState ("Cloudy");
     const [humidity, setHumidity] = useState("50");
     const [wind, setWind] = useState("20");
-    const [date, setDate] = useState("");
+    const [currentTime, setCurrentTime] = useState("");
+    const [icon, setIcon] = useState("04d");
 
     function getData(response){
       console.log(response);
-    setTemp (Math.round(response.data.list[0].main.temp));
-    setDescription (response.data.list[0].weather[0].description);
-    setHumidity (response.data.list[0].main.humidity);
-    setWind (Math.round(response.data.list[0].wind.speed));
-    setSearched (response.data.city.name);
-    setDate (Date((response.data.list[0].dt) * 1000));
-    console.log(date);
+    setTemp (Math.round(response.data.main.temp));
+    setDescription (response.data.weather[0].description);
+    setHumidity (response.data.main.humidity);
+    setWind (Math.round(response.data.wind.speed));
+    setSearched (response.data.name);
+    setCurrentTime ((response.data.dt) * 1000);
+    setIcon(response.data.weather[0].icon);
     
  }
     function logSearch(response) {
@@ -31,8 +33,8 @@ export default function Weather() {
 
     function searchCity(event) {
         event.preventDefault();
-    const apiKey = "5d6c4448bec0438467d1b99e784b02d6";
-    const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+    const apiKey = `9faf5890d66483fe5ea4c4fc5a185024`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(getData);
 }
     return (
@@ -55,7 +57,7 @@ export default function Weather() {
               {searched}
             </h1>
             <div>
-                <img className="weather-icon" src="images/04d.png" alt="weather icon"></img>
+              <WeatherIcon icon={icon} />
             </div>
             <div
               className="btn-group btn-group-toggle buttons"
@@ -96,7 +98,7 @@ export default function Weather() {
             Open-source code
           </a>
           by Rebecca Bell</div>
-          <div id="current-time" className="footer2">Last Updated:</div><CurrentDate date ={date}/>
+          <div id="current-time" className="footer2">Last Updated:<CurrentTime date={(new Date(currentTime))} /></div>
           </div>
       </footer>
       </div>

@@ -10,7 +10,14 @@ export default function CurrentTime(props) {
     let months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"]
     let month = months[props.date.getMonth()];
     let year = props.date.getFullYear();
+
+    if (year) {
     return (
         <div>{hour}:{minutes}, {day}, {date}/{month}/{year}</div>
     )
+} else {
+    return (
+        <div></div>
+    )
+}
 }

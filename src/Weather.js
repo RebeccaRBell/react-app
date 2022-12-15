@@ -3,6 +3,7 @@ import axios from "axios";
 import "./App.css"; 
 import CurrentTime from "./CurrentTime";
 import WeatherIcon from "./WeatherIcon";
+import Temperature from "./Temperature";
 
 
 export default function Weather() {
@@ -59,19 +60,8 @@ export default function Weather() {
             <div>
               <WeatherIcon icon={icon} />
             </div>
-            <div
-              className="btn-group btn-group-toggle buttons"
-              data-toggle="buttons"
-            >
-              <label className="btn btn-secondary" id="temp-button1">
-                <input type="radio" name="options" id="option1"  /> °C
-              </label>
-              <label className="btn btn-secondary" id="temp-button2">
-                <input type="radio" name="options" id="option2"  /> °F
-              </label>
-            </div>
             <div className="temp-today">
-              <p>{temp}°</p>
+            <Temperature temp={temp}/>
             </div>
           </div>
           </div>

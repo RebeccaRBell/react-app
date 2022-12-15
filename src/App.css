@@ -18,6 +18,7 @@ body {
   justify-content: space-evenly;
   text-align: center;
   border: 2px solid rgb(157, 168, 161, 0.5);
+  border-radius: 10px;
   margin-top: 25px;
   padding: 20px;
   width: 400px;
@@ -79,7 +80,8 @@ width: 100px;
   font-weight: 400;
   font-size: 25px;
   opacity: 0.7;
-  padding: 10px;
+  padding: 15px;
+  padding-top: 30px;
 }
 .description {
   list-style: none;
@@ -96,7 +98,7 @@ width: 300px;
   text-align: center;
   margin: -10px;
    text-align: center;
-  padding-left: 30px;
+  padding-left: 0px;
 
 }
 
@@ -255,7 +257,7 @@ img {
   padding-top: 0px;
   margin: 0px;
   margin-bottom: -30px;
-  padding-left: 5px;
+  padding-left: 0px;
   text-align: center;
 }
 

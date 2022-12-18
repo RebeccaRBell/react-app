@@ -29,7 +29,7 @@ export default function Temperature(props) {
               </label>
             </div>
             <div className="temp-today">
-              <p>{props.temp}°</p>
+              <p>{props.temp}<span className="degree">°</span></p>
             </div>
             </div>
     );
@@ -50,7 +50,7 @@ export default function Temperature(props) {
               </label>
             </div>
             <div className="temp-today">
-              <p>{fahrenheit}°</p>
+              <p>{fahrenheit}<span className="degree">°</span></p>
             </div>
             </div>
     );

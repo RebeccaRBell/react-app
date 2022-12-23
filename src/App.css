@@ -22,13 +22,13 @@ body {
   border-radius: 10px;
   margin-top: 25px;
   padding: 20px;
-  width: 100%;
-  max-width: 700px;
+  width: 700px;
 }
 
 .row-one {
   width: 100%;
   padding-bottom: 10px;
+  padding: 10px;
 }
 
 .search-box {
@@ -58,10 +58,7 @@ body {
   width: 400px;
   margin: 0px;
   margin-top: 20px;
-  padding: 0px;
-  border: none;
-  border-right: 2px solid rgb(157, 168, 161, 0.5);
-  
+  padding-top: 10px;
 }
 
 .city {
@@ -257,86 +254,254 @@ img {
 
 @media screen and (min-width: 600px) and (max-width: 1000px) {
   .whole-app {
-    margin-top: 25px;
-    width: 600px;
-  }
-
-  .row-one {
-    width: 100%;
-    padding-top: 20px;
-    padding-bottom: 0px;
-    margin: 0px;
-  }
-
-  .column-one {
-    text-align: center;
-    margin: 0px;
-    padding: 0px;
-    width: 350px;
-    
-  }
-
-  .city {
-    font-size: 45px;
-    font-weight:300;
-    text-align: center;
-    padding-top: 50px;
-    margin: 0px;
-  }
-    .weather-icon {
-      padding-top: 30px;
-      width: 100px;
-      display: block;
-      margin: 0 auto;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
+      border: 2px solid rgb(157, 168, 161, 0.5);
+      border-radius: 10px;
+      margin-top: 25px;
+      padding: 20px;
+      width: 70vw;
     }
+  
+    .row-one {
+      width: 70vw;
+      padding-bottom: 10px;
+    }
+  
+    .search-box {
+      width: 70%;
+      font-size: 15px;
+      border-radius: 10px;
+      padding-left: 10px;
+    }
+  
+    #submit-button {
+      width: 20%;
+      margin: 10px;
+      font-size: 13px;
+    }
+  
+    .column-one {
+      width: 100vw;
+      margin: 0px;
+      margin-top: 20px;
+      padding: 0px;
+  
+    }
+  
+    .city {
+      font-size: 30px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin: 0px;
+      margin-top: 25px;
 
-.column-two {
-  width: 250px;
-}
-.temp-today {
-  padding-top: 0px;
-  margin: 0px;
-  margin-bottom: -30px;
-  padding-left: 0px;
-  text-align: center;
-}
-
-.buttons {
-  align-items: center;
-  padding-top: 30px;
-  margin: 0px;
-}
-.details {
-  padding: 0px;
-  text-align: center;
-}
-.details li {
-  text-align: center;
-  padding: 0px;
-  margin: 0px;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 30px;
-}
-#description {
-  text-align: center;
-  text-transform: capitalize;
-  font-weight: 400;
-  font-size: 22px;
-  opacity: 0.7;
-}
-
-.description {
-  list-style: none;
-  text-transform: capitalize;
-}
-  .footer-info {
-    width: 450px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-  }
+    }
+  
+    .weather-icon {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      width: 100px;
+    }
+  
+    #description {
+      position: relative;
+      text-transform: capitalize;
+      font-weight: 400;
+      font-size: 20px;
+      opacity: 0.7;
+      padding: 15px;
+      padding-top: 30px;
+    }
+  
+    .description {
+      list-style: none;
+      text-transform: capitalize;
+    }
+  
+    .temp-today p {
+      font-size: 50px !important;
+      font-weight: 200;
+      text-align: center;
+      margin: -10px;
+      text-align: center;
+      padding-left: 37px;
+  
+    }
+  
+  
+    .buttons {
+      align-items: center;
+      padding: 0px;
+      margin: 0px;
+    }
+  
+    #temp-button1 {
+      cursor: pointer;
+      font-size: 15px;
+      background-color: whitesmoke;
+      color: rgb(92, 100, 95);
+      display: block;
+      margin: auto;
+      width: 30px;
+      height: 25px;
+      padding: 0px;
+      text-align: center;
+      border: none;
+      border-right: 1px solid grey;
+    }
+  
+    #temp-button1:hover {
+      background-color: rgba(199, 64, 64, 0.823);
+      color: white;
+      opacity: 0.9;
+    }
+  
+    #temp-button2 {
+      cursor: pointer;
+      font-size: 15px;
+      background-color: whitesmoke;
+      color: rgb(92, 100, 95);
+      display: block;
+      margin: auto;
+      width: 30px;
+      height: 25px;
+      padding: 0px;
+      text-align: center;
+      border: none;
+      border-left: 1px solid grey;
+    }
+  
+    #temp-button2:hover {
+      background-color: rgba(199, 64, 64, 0.823);
+      color: white;
+      opacity: 0.9;
+    }
+  
+    .temp-today p {
+      font-size: 70px;
+      text-align: center;
+      letter-spacing: 5px;
+    }
+  
+    .details {
+      padding-top: 10px;
+    }
+  
+    .details li {
+      position: relative;
+      text-align: center;
+      margin-left: -20px;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 30px;
+    }
+  
+    #wind {
+      position: relative;
+      list-style: none;
+    }
+  
+    .wind {
+      list-style: none;
+    }
+  
+    #humidity {
+      position: relative;
+      list-style: none;
+    }
+  
+    .humidity {
+      list-style: none;
+    }
+  
+    .row-two {
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+  
+    }
+  
+    .column-two {
+      padding-top: 50px;
+      width: 100vw;
+      margin: 0px;
+    }
+  
+    .forecast {
+      height: 80vh;
+      padding: 0px;
+      margin: 0px;
+    }
+  
+    .forecast-one,
+    .forecast-two,
+    .forecast-three,
+    .forecast-four,
+    .forecast-five {
+      width: 100%;
+      height: 18%;
+      padding: 0px;
+      border: solid 1px rgb(157, 168, 161, 0.5);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+  
+    .max-temp {
+      color: black;
+  
+    }
+  
+    .min-temp {
+      color: black;
+      opacity: 0.8;
+  
+    }
+  
+    .column-two p {
+      padding: 10px;
+      margin: 0px;
+    }
+  
+    .column-two img {
+      width: 70px;
+      height: 70px;
+    }
+  
+    img {
+      filter: opacity(0.8) drop-shadow(0 0 0 red);
+      margin: -5px;
+      padding: 0px;
+      margin: 0px;
+    }
+  
+    .footer-info {
+      width: 70vw;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+  
+    .footer1 {
+      width: 50%;
+      font-size: 11px;
+      text-align: left;
+    }
+  
+    .footer2 {
+      width: 50%;
+      text-align: right;
+      font-size: 11px;
+      padding: 5px;
+    }
 }
 
 /*for mobile resolution*/

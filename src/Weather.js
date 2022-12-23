@@ -4,6 +4,7 @@ import "./App.css";
 import CurrentTime from "./CurrentTime";
 import WeatherIcon from "./WeatherIcon";
 import Temperature from "./Temperature";
+import Forecast from "./Forecast";
 
 
 export default function Weather() {
@@ -16,6 +17,8 @@ export default function Weather() {
     const [wind, setWind] = useState("20");
     const [currentTime, setCurrentTime] = useState("");
     const [icon, setIcon] = useState("04d");
+    const [lat, setLat] = useState("");
+    const [lon, setLon] = useState("");
 
     function getData(response){
       console.log(response);
@@ -26,6 +29,8 @@ export default function Weather() {
     setSearched (response.data.name);
     setCurrentTime ((response.data.dt) * 1000);
     setIcon(response.data.weather[0].icon);
+    setLat(response.data.coord.lat);
+    setLon(response.data.coord.lon);
     
  }
     function logSearch(response) {
@@ -42,7 +47,8 @@ export default function Weather() {
         <div>
             <div className="container box whole-app">
         <div className="row row-one">
-          <form className="col city-search" onSubmit={searchCity}>
+          <div className="col-lg-12">
+          <form className="city-search" onSubmit={searchCity}>
             <input
               type="input"
               id="search_box"
@@ -53,7 +59,7 @@ export default function Weather() {
             </form>
         </div>
         <div className="row row-two">
-          <div className="col-lg-6 column-one">
+          <div className="col-lg-8 column-one">
             <h1 className="city" id="city">
               {searched}
             </h1>
@@ -63,9 +69,6 @@ export default function Weather() {
             <div className="temp-today">
             <Temperature temp={temp}/>
             </div>
-          </div>
-          </div>
-          <div className="col-lg column-two">
             <ul className="details">
                <li className="description" id="description">{description}</li>
                 <li className="wind">
@@ -76,7 +79,11 @@ export default function Weather() {
                 </li>
               </ul>
               </div>
-
+              <div className="col-lg-4 column-two">
+                <Forecast city={searched} latitude={lat} longitude={lon}/>
+              </div>
+          </div>
+          </div>
           </div>
       <footer>
          <div className="footer-info">

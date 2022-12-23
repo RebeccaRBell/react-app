@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function CurrentTime(props) {
-    console.log(props.date);
     let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     let day = days[props.date.getDay()];
     let hour = props.date.getHours();
@@ -11,10 +10,22 @@ export default function CurrentTime(props) {
     let month = months[props.date.getMonth()];
     let year = props.date.getFullYear();
 
-    if (year) {
+    if (hour & minutes <= 9){
     return (
-        <div>{hour}:{minutes}, {day}, {date}/{month}/{year}</div>
+        <div>0{hour}:0{minutes}, {day}, {date}/{month}/{year}</div>
     )
+} else if (minutes <= 9){
+    return (
+<div>{hour}:0{minutes}, {day}, {date}/{month}/{year}</div>
+    )
+} else if (hour <= 9) {
+    return (
+ <div>0{hour}:{minutes}, {day}, {date}/{month}/{year}</div>
+    )
+} else if (hour) {
+return (
+    <div>{hour}:{minutes}, {day}, {date}/{month}/{year}</div>
+)
 } else {
     return (
         <div></div>

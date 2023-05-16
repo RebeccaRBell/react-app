@@ -1,5 +1,6 @@
 import React from "react";
 
+
 export default function WeatherIcon(props) {
     let imgsrc = ("./images/" + (props.icon) + ".png");
     return (
